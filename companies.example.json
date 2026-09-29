@@ -1,0 +1,30 @@
+[
+  {
+    "type": "workday",
+    "name": "Example Corp (Workday)",
+    "origin_host": "example.wd1.myworkdayjobs.com",
+    "tenant_path": "example/Careers",
+    "payload": {
+      "appliedFacets": {
+        "locationCountry": [
+          "80938777cac5440fab50d729f9634969"
+        ]
+      },
+      "limit": 20,
+      "offset": 0,
+      "searchText": ""
+    }
+  },
+  {
+    "type": "amazon",
+    "name": "Example Amazon Portal"
+  },
+  {
+    "type": "microsoft",
+    "name": "Example Microsoft Portal"
+  },
+  {
+    "type": "google",
+    "name": "Example Google Portal"
+  }
+]

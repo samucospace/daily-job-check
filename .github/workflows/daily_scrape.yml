@@ -1,0 +1,26 @@
+name: Daily Career Check
+on:
+  schedule:
+    - cron: '12 17 * * 0-4'  # Mon-Fri at 9:12 AM Singapore Time (01:00 UTC) - being tested
+  workflow_dispatch:        # Manual run button
+
+jobs:
+  check-jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run tracker
+        env:
+          EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
+          COMPANIES_CONFIG: ${{ secrets.COMPANIES_CONFIG }}
+        run: python main.py

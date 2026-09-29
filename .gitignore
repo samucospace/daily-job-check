@@ -1,0 +1,20 @@
+# Private configuration
+companies.json
+
+# Local state
+seen_job_ids.json
+
+# Environment variables
+.env
+
+# Python cache and environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# IDE files
+.vscode/
+.idea/
