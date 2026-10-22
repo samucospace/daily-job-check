@@ -2,12 +2,14 @@ from .workday import check_workday
 from .amazon import check_amazon
 from .microsoft import check_microsoft
 from .google import check_google
+from .ashby import check_ashby
 
 SCRAPERS = {
     "workday": lambda cfg, start_date, valid_relative: check_workday(cfg, valid_relative),
     "amazon": lambda cfg, start_date, valid_relative: check_amazon(cfg, start_date),
     "microsoft": lambda cfg, start_date, valid_relative: check_microsoft(cfg, start_date),
     "google": lambda cfg, start_date, valid_relative: check_google(cfg, start_date),
+    "ashby": lambda cfg, start_date, valid_relative: check_ashby(cfg, start_date),
 }
 
 def scrape_company(config, start_date, valid_relative):

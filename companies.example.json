@@ -26,5 +26,10 @@
   {
     "type": "google",
     "name": "Example Google Portal"
+  },
+  {
+    "type": "ashby",
+    "name": "Example Ashby Portal",
+    "job_board_name": "example-org"
   }
 ]

@@ -45,6 +45,7 @@ daily-job-check/
 ├── scrapers/
 │   ├── __init__.py             # Scraper registry & dispatcher
 │   ├── workday.py              # Generic Workday CXS scraper
+│   ├── ashby.py                # Generic Ashby job board scraper
 │   ├── amazon.py               # Amazon Jobs scraper
 │   ├── microsoft.py            # Microsoft Phenom scraper
 │   └── google.py               # Google Careers scraper
@@ -115,6 +116,18 @@ Workday CXS endpoints accept structured JSON search payloads and country/locatio
   }
 }
 ```
+
+### Ashby Portals (`type: "ashby"`)
+Ashby provides a public Job Posting API. You can configure companies hosted on Ashby by specifying their job board identifier or URL:
+```json
+{
+  "type": "ashby",
+  "name": "Acme Corp",
+  "job_board_name": "acme",
+  "location": "Singapore"
+}
+```
+*(Note: `location` defaults to `"Singapore"`. To match all locations, specify `"location": "all"`.)*
 
 ### Built-in Corporate Scrapers
 For career boards with custom endpoints, specify the corresponding type:
